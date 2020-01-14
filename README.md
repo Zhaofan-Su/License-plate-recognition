@@ -18,21 +18,21 @@
 ```sh
 git clont 
 cd License-plate-recognition
-python demo.py --char_model char-models/trained-model-name.meta --license_model license-models/license-model-name.meta
+python demo.py --char_model char-models/trained-char-model-name.meta --license_model license-models/trained-license-model-name.meta
 ```
 使用上述命令，你可以直接看到从给定的图片中分割出来的车牌区域以及对其进行字符串分割之后的识别效果。
 
 字符识别CNN网络：
 
 ```sh
-python cnn.py -t 0 -f 0     # 训练字符识别CNN网络
-python cnn.py -t 0 -f 1 -m 'char-models/your model name'     # 测试字符识别CNN网络
+python cnn.py -t 0 -f 0 -mr char-models/your-model-name     # 训练字符识别CNN网络
+python cnn.py -t 0 -f 1 -m char-models/char-model-510     # 测试字符识别CNN网络
 ```
 
 车牌识别CNN网络：
 ```sh
-pyton cnn.py -t 1 -f 0      # 训练车牌识别CNN网络
-python cnn.py -t 1 -f 1 -m 'license-models/your model name'      # 测试车牌识别CNN网络
+pyton cnn.py -t 1 -f 0 -mr license-models/your-model-name      # 训练车牌识别CNN网络
+python cnn.py -t 1 -f 1 -m license-models/license-model-510      # 测试车牌识别CNN网络
 ```
 
 使用
